@@ -1,0 +1,40 @@
+# Created with komac v2.16.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.12.0.schema.json
+
+PackageIdentifier: cst8t.gitmun
+PackageVersion: 0.5.1
+InstallModes:
+- interactive
+- silent
+- silentWithProgress
+UpgradeBehavior: install
+Dependencies:
+  PackageDependencies:
+  - PackageIdentifier: Git.Git
+ReleaseDate: 2026-05-16
+Installers:
+- Architecture: x64
+  InstallerType: nullsoft
+  Scope: user
+  InstallerUrl: https://github.com/cst8t/gitmun/releases/download/v0.5.1/Gitmun_0.5.1_x64-setup.exe
+  InstallerSha256: FBB036686E0F98FFE333FDF3BD6B1A6DCC50DB83130CFD256B2FD45E56390479
+  InstallerSwitches:
+    Custom: /SkipGitCheck
+  ProductCode: Gitmun
+  AppsAndFeaturesEntries:
+  - ProductCode: Gitmun
+  InstallationMetadata:
+    DefaultInstallLocation: '%LocalAppData%\Gitmun'
+- Architecture: x64
+  InstallerType: wix
+  Scope: machine
+  InstallerUrl: https://github.com/cst8t/gitmun/releases/download/v0.5.1/Gitmun_0.5.1_x64.msi
+  InstallerSha256: 8ADC377296EA09876CD934E53A68BE2A53F03C31A882CDDDC895A8C8E565F983
+  ProductCode: '{824240E3-0C59-4E28-8652-A1FFCD62B78A}'
+  AppsAndFeaturesEntries:
+  - ProductCode: '{824240E3-0C59-4E28-8652-A1FFCD62B78A}'
+    UpgradeCode: '{CFD38D6F-06D8-500B-8162-2815A511EBAF}'
+  InstallationMetadata:
+    DefaultInstallLocation: '%ProgramFiles%/Gitmun'
+ManifestType: installer
+ManifestVersion: 1.12.0
